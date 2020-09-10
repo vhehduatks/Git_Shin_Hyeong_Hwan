@@ -16,11 +16,11 @@ channel_url = 'https://center-pf.kakao.com/profiles'
 driver.get(login_url)
 driver.maximize_window()
 action = ActionChains(driver)
-USER_ID = 'hegyna1@naver.com'
-USER_PASS = 'gudghks20!'     
-Channel_value01= '/_xcKxebxb'
-Autoit_Path=r"C:\Users\140407\Desktop\크롤링\FileUpload.exe"
-File_Directory_Path=r"C:\Users\140407\Desktop\크롤링\data"
+USER_ID = 'kakao ID'
+USER_PASS = 'kakao PASS'     
+Channel_value01= 'Channel_value'
+Autoit_Path=r"FileUpload.exe path"
+File_Directory_Path=r"Upload date path"
 Nowtime=datetime.datetime.now()
 
 
