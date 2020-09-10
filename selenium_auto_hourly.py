@@ -16,12 +16,11 @@ channel_url = 'https://center-pf.kakao.com/profiles'
 driver.get(login_url)
 driver.maximize_window()
 action = ActionChains(driver)
-USER_ID = 'hegyna1@naver.com'
-USER_PASS = 'gudghks20!'     
-Channel_value01= '/_xcKxebxb'
-Channel_value02= '/_vCxbQxb'
-Autoit_Path=r"C:\Users\140407\Desktop\크롤링\FileUpload.exe"
-File_Directory_Path=r"C:\Users\140407\Desktop\크롤링\data"
+USER_ID = 'kakao ID'
+USER_PASS = 'kakao PASS'     
+Channel_value01= 'Channel_value'
+Autoit_Path=r"FileUpload.exe path"
+File_Directory_Path=r"Upload date path"
 Nowtime=datetime.datetime.now()
 
 
@@ -99,8 +98,9 @@ def Check_File():
 
     File_list=os.listdir(File_Directory_Path)
     End_of_file=File_list[len(File_list)-1]
+    #hourly 형식 Hourly_Temp_YYYY_MM_DD_HH.png 이므로 시간별로 체크
     Temp=Nowtime.strftime('%Y%m%d-%H')
-    Extension=".jpg"
+    Extension=".png"
     if Temp in End_of_file:
         if Extension in End_of_file:
             pass
@@ -154,5 +154,4 @@ def CLOSE_DRIVER():
 LOGIN(USER_ID,USER_PASS)
 SET_CHANNEL(Channel_value01)
 SET_POST()
-#SEND_MESSAGE()
 CLOSE_DRIVER()

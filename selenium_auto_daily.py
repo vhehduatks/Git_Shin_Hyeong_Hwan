@@ -19,7 +19,6 @@ action = ActionChains(driver)
 USER_ID = 'hegyna1@naver.com'
 USER_PASS = 'gudghks20!'     
 Channel_value01= '/_xcKxebxb'
-Channel_value02= '/_vCxbQxb'
 Autoit_Path=r"C:\Users\140407\Desktop\크롤링\FileUpload.exe"
 File_Directory_Path=r"C:\Users\140407\Desktop\크롤링\data"
 Nowtime=datetime.datetime.now()
@@ -79,7 +78,6 @@ def SET_POST():
     driver.find_element_by_xpath("//*[@id=\"mArticle\"]/div/div/div[1]/div[2]/form/div[4]/div[2]/div[2]/button[2]").click()
     time.sleep(1)
 
-
 def RUN_AUTOIT():
 
     Autoit_File_Path=MAKE_FILE_PATH()
@@ -99,8 +97,9 @@ def Check_File():
 
     File_list=os.listdir(File_Directory_Path)
     End_of_file=File_list[len(File_list)-1]
-    Temp=Nowtime.strftime('%Y%m%d-%H')
-    Extension=".jpg"
+    #daily 이미지 형식 Daily_Temp_YYYY_MM_DD.png 이므로 날짜까지만 조건
+    Temp=Nowtime.strftime('%Y_%m_%d')
+    Extension=".png"
     if Temp in End_of_file:
         if Extension in End_of_file:
             pass
