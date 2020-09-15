@@ -31,14 +31,8 @@ if __name__ == "__main__":
     Time=0
     snail=Snail()
     while(1):
-    
         if snail.work(Time)==0:
             break
-
         if Time==24:
             Time=0
-
         Time+=1
-       
-
-    
