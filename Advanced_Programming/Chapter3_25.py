@@ -3,7 +3,7 @@ class Snail:
     def __init__(self):
         self.init_point=0
         self.date=1
-        self.time=0
+        
        
     def work(self,time):
         if self.init_point>30:
