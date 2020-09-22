@@ -92,7 +92,18 @@ def GET_SOURCE(Channel_value,Num=0,Token="default"):
     #    print("img src : "+p.find_element(By.TAG_NAME,'img').get_attribute("src"))
 
     return post[Num].find_element(By.TAG_NAME,'img').get_attribute("src")
-    
+
+def GET_Link(file_name):
+    try:
+        with open(file_name,'r') as f:
+            img_link=f.read()
+
+        return img_link    
+    except Exception as e:
+            print(e)
+
+
+
 def CLOSE_DRIVER():
     driver.quit()
     exit()
@@ -109,108 +120,108 @@ print(GET_SOURCE(Channel_value02))
 # def API_SKILL():
 
  
-# req=requests.get('https://center-pf.kakao.com/_xcKxebxb/posts')
-# html=req.text
-# soup=BeautifulSoup(html,'html.parser')
+req=requests.get('https://center-pf.kakao.com/_xcKxebxb/posts')
+html=req.text
+soup=BeautifulSoup(html,'html.parser')
 
-# print(soup)
-# print(type(soup))
-
-
-# app=Flask(__name__)
+print(soup)
+print(type(soup))
 
 
-# @app.route('/')
-# def testmain():
-#     return "Hello_world"
+app=Flask(__name__)
 
-# @app.route('/testskill01',methods=['POST'])
 
-# def func01():
+@app.route('/')
+def testmain():
+    return "Hello_world"
+
+@app.route('/testskill01',methods=['POST'])
+
+def func01():
     
-#     driver.refresh()
-#     time.sleep(1)
-#     content = request.get_json()
-#     content = content['userRequest']
-#     Client_Message = content['utterance']
-#     print(Client_Message)
-#     res={   
-#         "version": "2.0",
-#         "template": 
-#         {
-#             "outputs": 
-#             [
-#                 {
-#                     "simpleImage": 
-#                     {
-#                         "imageUrl": GET_SOURCE(Channel_value01),
-#                         "altText": "1번 채널 사진입니다."
-#                     }
-#                 }
-#             ]
-#         }
-#     }
-#     return jsonify(res)
+    driver.refresh()
+    time.sleep(1)
+    content = request.get_json()
+    content = content['userRequest']
+    Client_Message = content['utterance']
+    print(Client_Message)
+    res={   
+        "version": "2.0",
+        "template": 
+        {
+            "outputs": 
+            [
+                {
+                    "simpleImage": 
+                    {
+                        "imageUrl": GET_Link('CCTV.txt'),
+                        "altText": "1번 채널 사진입니다."
+                    }
+                }
+            ]
+        }
+    }
+    return jsonify(res)
 
-# @app.route('/testskill02',methods=['POST'])
+@app.route('/testskill02',methods=['POST'])
 
-# def func02():
+def func02():
     
-#     driver.refresh()
-#     time.sleep(1)
-#     content = request.get_json()
-#     content = content['userRequest']
-#     Client_Message = content['utterance']
-#     print(Client_Message)
-#     res={   
-#         "version": "2.0",
-#         "template": 
-#         {
-#             "outputs": 
-#             [
-#                 {
-#                     "simpleImage": 
-#                     {
-#                         "imageUrl": GET_SOURCE(Channel_value02,0),
-#                         "altText": "2번 채널 사진입니다."
-#                     }
-#                 }
-#             ]
-#         }
-#     }
-#     return jsonify(res)
+    driver.refresh()
+    time.sleep(1)
+    content = request.get_json()
+    content = content['userRequest']
+    Client_Message = content['utterance']
+    print(Client_Message)
+    res={   
+        "version": "2.0",
+        "template": 
+        {
+            "outputs": 
+            [
+                {
+                    "simpleImage": 
+                    {
+                        "imageUrl": GET_Link('Hourly.txt'),
+                        "altText": "2번 채널 사진입니다."
+                    }
+                }
+            ]
+        }
+    }
+    return jsonify(res)
 
-# @app.route('/testskill03',methods=['POST'])
+@app.route('/testskill03',methods=['POST'])
 
-# def func03():
+def func03():
     
-#     driver.refresh()
-#     time.sleep(1)
-#     content = request.get_json()
-#     content = content['userRequest']
-#     Client_Message = content['utterance']
-#     print(Client_Message)
-#     res={   
-#         "version": "2.0",
-#         "template": 
-#         {
-#             "outputs": 
-#             [
-#                 {
-#                     "simpleImage": 
-#                     {
-#                         "imageUrl": GET_SOURCE(Channel_value01,1),
-#                         "altText": "18시 30분 현장 사진입니다."
-#                     }
-#                 }
-#             ]
-#         }
-#     }
-#     return jsonify(res)
+    driver.refresh()
+    time.sleep(1)
+    content = request.get_json()
+    content = content['userRequest']
+    Client_Message = content['utterance']
+    print(Client_Message)
+    res={   
+        "version": "2.0",
+        "template": 
+        {
+            "outputs": 
+            [
+                {
+                    "simpleImage": 
+                    {
+                        "imageUrl": GET_Link('daily.txt'),
+                        "altText": "18시 30분 현장 사진입니다."
+                    }
+                }
+            ]
+        }
+    }
+    return jsonify(res)
 
 
-# if __name__=="__main__":
-#     app.run(host='0.0.0.0',port='8080')
+if __name__=="__main__":
+    app.run(host='0.0.0.0',port='8080')
 
 # 168.131.70.215
 #노트북 168.131.70.50

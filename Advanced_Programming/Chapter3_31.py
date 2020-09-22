@@ -1,5 +1,3 @@
-
-
 def Amicable_Numbers(num):
     amicable=[]
 

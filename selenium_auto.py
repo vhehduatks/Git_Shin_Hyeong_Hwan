@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import *
+from selenium.webdriver.common.by import By
 
 import time
 import os
@@ -144,6 +145,21 @@ def SEND_MESSAGE():
 
 
 
+def GET_SOURCE(Channel_value,Num=0):
+    try:
+        driver.get('https://center-pf.kakao.com'+Channel_value+'/posts')
+        time.sleep(1)
+        post=driver.find_elements(By.CLASS_NAME,'img_collage')
+    except Exception as e:
+        print(e)
+
+
+    return post[Num].find_element(By.TAG_NAME,'img').get_attribute("src")
+
+def STOR_SOURCE(img_path):
+    with open('test.txt',"w") as f:
+        f.write(img_path)
+
 def CLOSE_DRIVER():
     driver.quit()
     exit()
@@ -153,5 +169,6 @@ def CLOSE_DRIVER():
 LOGIN(USER_ID,USER_PASS)
 SET_CHANNEL(Channel_value01)
 SET_POST()
+STOR_SOURCE(GET_SOURCE(Channel_value01))
 #SEND_MESSAGE()
 CLOSE_DRIVER()
