@@ -5,8 +5,8 @@ def mean_of_n(nums):
         nums=list(map(int,nums))
     except Exception as e:
         print("Wrong_value :",e)
-
-    return sum(nums)/len(nums)
+#파이썬 소수점 표기법 '%.1f'%=소수점1자리까지 표사
+    return '%.1f'%float(sum(nums)/len(nums))
 
 def max_of_n(nums):
     nums=nums.split(' ')
