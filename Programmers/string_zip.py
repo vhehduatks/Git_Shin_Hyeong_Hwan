@@ -46,7 +46,7 @@ def solution(s):
 
         len_list.append(temp)    
 
-    print(len_list)
+ 
 
     minvalue=list()
     
@@ -60,7 +60,6 @@ def solution(s):
 
         minvalue.append(result)
 
-    print(minvalue)
     return min(minvalue)
 
 

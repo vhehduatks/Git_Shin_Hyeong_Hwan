@@ -1,7 +1,6 @@
 import turtle as t
 import random as rd
-import math
-PI=math.pi
+
 height=300  
 width=300
 

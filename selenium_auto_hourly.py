@@ -113,35 +113,35 @@ def Check_File():
         CLOSE_DRIVER()
         return 0           
 
-def SEND_MESSAGE():
+# def SEND_MESSAGE():
 
-    Message=Nowtime.strftime('%Y_%m_%d %H:%M')+" 에 작성되었음"
+#     Message=Nowtime.strftime('%Y_%m_%d %H:%M')+" 에 작성되었음"
 
-    time.sleep(1)
-    driver.find_element_by_xpath("//*[@id=\"kakaoGnb\"]/div/div/ul[3]/li[1]/a/span[1]").click()    
-    time.sleep(1)
-    driver.find_element_by_xpath("//*[@id=\"mArticle\"]/div[2]/ul/li[1]/button").click()
-    time.sleep(1)
-    driver.find_element_by_xpath("//*[@id=\"messageWrite\"]").send_keys(Message)
-    time.sleep(1)
-    # action.send_keys("Message").perform() //ElementNotInteractableException 발생할경우엔 click사용해야할수 있음
-    time.sleep(1)
-    driver.find_element_by_xpath("//*[@id=\"mArticle\"]/div/form/div[2]/span/div/button[2]").click()
-    time.sleep(1)
-    driver.find_element_by_xpath("//*[@id=\"mArticle\"]/div/form/div[2]/button[4]").click()
-    time.sleep(1)
-    try:
-        Alert=driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/div[2]/strong").text     
-        print(Alert)
-    except NoSuchElementException as e:
-        KeyToken="메시지 발송이 바로 시작됩니다."
-        Alert=driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/div/strong").text
-        print(type(e),": "+Alert)
-        if(Alert==KeyToken):
-            driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/div/div[2]/button[2]").click()
-    except Exception as e:
-        logging.info(Nowtime.strftime(' %Y_%m_%d %H:%M')+":: "+type(e)+": SEND_MESSAGE 과정에서 예외상황이 발생하였습니다.")
-        CLOSE_DRIVER()
+#     time.sleep(1)
+#     driver.find_element_by_xpath("//*[@id=\"kakaoGnb\"]/div/div/ul[3]/li[1]/a/span[1]").click()    
+#     time.sleep(1)
+#     driver.find_element_by_xpath("//*[@id=\"mArticle\"]/div[2]/ul/li[1]/button").click()
+#     time.sleep(1)
+#     driver.find_element_by_xpath("//*[@id=\"messageWrite\"]").send_keys(Message)
+#     time.sleep(1)
+#     # action.send_keys("Message").perform() //ElementNotInteractableException 발생할경우엔 click사용해야할수 있음
+#     time.sleep(1)
+#     driver.find_element_by_xpath("//*[@id=\"mArticle\"]/div/form/div[2]/span/div/button[2]").click()
+#     time.sleep(1)
+#     driver.find_element_by_xpath("//*[@id=\"mArticle\"]/div/form/div[2]/button[4]").click()
+#     time.sleep(1)
+#     try:
+#         Alert=driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/div[2]/strong").text     
+#         print(Alert)
+#     except NoSuchElementException as e:
+#         KeyToken="메시지 발송이 바로 시작됩니다."
+#         Alert=driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/div/strong").text
+#         print(type(e),": "+Alert)
+#         if(Alert==KeyToken):
+#             driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/div/div[2]/button[2]").click()
+#     except Exception as e:
+#         logging.info(Nowtime.strftime(' %Y_%m_%d %H:%M')+":: "+type(e)+": SEND_MESSAGE 과정에서 예외상황이 발생하였습니다.")
+#         CLOSE_DRIVER()
 
 
 
