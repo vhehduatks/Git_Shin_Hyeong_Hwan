@@ -6,7 +6,7 @@ def fibo(num):
             F[i]=F[i-1]+F[i-2]
 
     return F
-    
+   
 if __name__ == "__main__":
     max_num=15
     Fibo_num=fibo(max_num+1)
