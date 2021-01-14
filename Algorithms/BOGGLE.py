@@ -47,14 +47,12 @@ def find_word(word_list,BOGGLE_list):
                 if word in in_word_list:
                     break
                 if(hasword(BOGGLE_row,BOGGLE_col,temp_word,BOGGLE)):
-
                     if len(longest)<=len(word):
                         if len(longest)==len(word):
                             if longest>word:
                                 longest=word
                         elif len(longest)!=len(word):
-                            longest=word
-                        
+                            longest=word               
                     in_word_list.append(word)
                     score+=SCORE[len(word)]
                     
