@@ -39,7 +39,7 @@ def recur(time_now,switch_num):
     ret=INF
     for i in range(4):
         temp_ret=(i+recur(time_now,switch_num+1))
-        ret=temp_ret if temp_ret<ret else ret
+        ret=min(temp_ret,ret)
         push(time_now,switch_num)
     
     return ret
