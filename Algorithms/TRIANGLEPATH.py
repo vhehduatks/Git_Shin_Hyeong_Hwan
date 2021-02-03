@@ -27,4 +27,5 @@ for _ in range(cs):
         line=list(map(int,read().split()))
         tri.append(line)
     print(path(0,0))
+    
     # print(cache)
