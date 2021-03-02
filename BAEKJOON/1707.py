@@ -33,7 +33,7 @@ for _ in range(case_num):
 
     for i in range(1,n+1):
         dfs(i,None,0)
-    print(color)    
+    # print(color)    
     if ret>0:
         print('NO')
     else:
