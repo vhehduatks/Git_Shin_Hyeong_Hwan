@@ -42,6 +42,7 @@ print(iris_dataset['data'][:5])
 
 #데이터셋 분할(훈련,테스트)
 x_train,x_test,y_train,y_test=train_test_split(iris_dataset.data,iris_dataset.target,random_state=0)
+x_train,x_test,y_train,y_test=train_test_split(iris_dataset.data,iris_dataset.target,random_state=0)
 
 
 print('x_tarin의 크기',x_train.shape)
@@ -88,3 +89,5 @@ plt.plot(k_range,accuracy)
 plt.xlabel('k')
 plt.ylabel('accuracy')
 plt.show()
+
+#1
