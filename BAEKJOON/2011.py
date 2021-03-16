@@ -1,6 +1,6 @@
 import sys
 read=sys.stdin.readline
-sys.setrecursionlimit(10**8)
+sys.setrecursionlimit(10**7)
 
 A=read().strip()
 dp=[0]*(10001)
