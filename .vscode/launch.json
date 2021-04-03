@@ -5,6 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Parser",
+            "request": "launch",
+            "mainClass": "PL.Clite_student.Parser",
+            "projectName": "Git_Shin_Hyeong_Hwan_b00ce784",
+            "args": "java_argv.txt"
+        },
+        {
+            "type": "java",
+            "name": "Launch Lexer",
+            "request": "launch",
+            "mainClass": "PL.Clite_student.Lexer",
+            "projectName": "Git_Shin_Hyeong_Hwan_b00ce784",
+            "args": "java_argv.txt"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
